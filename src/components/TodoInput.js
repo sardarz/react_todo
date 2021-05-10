@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TodoInputAndTodoItem.scss';
 
-const TodoInput = () => {
+const TodoInput = ({listTodo, setListTodo}) => {
   const [value, setValue] = useState('');
   const [checked, setChecked] = useState(false);
 
@@ -9,13 +9,14 @@ const TodoInput = () => {
     evt.preventDefault();
     // console.log(evt);
     if (!value) return;
-    console.log(value);
+    const tempArr = [...listTodo, {value, isCompleted: false}]
     setValue('')
+    setListTodo(tempArr)
   }
 
   return (
     <form className="todo__form" onSubmit={onFormSubmit}>
-      <div className={`circle ${checked ? 'checked' : ''}`} onClick={() => setChecked(!checked)}>
+      <div className={`circle circle-add`}>
       <i className="fas fa-check"></i>
       </div>
       <input

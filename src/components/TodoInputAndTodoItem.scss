@@ -3,7 +3,7 @@
   margin-top: 5rem;
 }
 
-.todo__input {
+.todo__input, .todo__item {
   width: 100%;
   border: none;
   outline: none;
@@ -14,14 +14,17 @@
   border-radius: .5rem;
   position: relative;
   box-shadow: 1px 2px 10px rgba(black, .2);
-
   &::placeholder {
     color: var(--very-dark-grayish-blue-2);
   }
 }
 
-.todo__input.checked {
+.todo__input.checked, .todo__text.checked {
   text-decoration: line-through;
+}
+
+.todo__text {
+  cursor: pointer;
 }
 
 .circle{
@@ -61,6 +64,19 @@ body.light-theme .todo__input {
   color: var(--very-dark-grayish-blue-2);
 }
 
+body.light-theme .todo__item {
+  background-color: white;
+  color: var(--very-dark-grayish-blue-2);
+}
+
 body.light-theme .circle {
   border-color: var(--lt-light-grayish-blue);
+}
+
+.todo__item {
+  position: relative;
+}
+
+.circle-add {
+  cursor: initial;
 }

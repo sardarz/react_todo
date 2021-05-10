@@ -7,7 +7,7 @@ import './App.scss';
 
 const App = () => {
   const [darkTheme, setTheme] = useState(true);
-  // const [list, setList] = useState([]);
+  const [listTodo, setListTodo] = useState([]);
 
   useEffect(() => {
     document.body.classList = `${!darkTheme ? 'light-theme' : ''}`
@@ -20,8 +20,8 @@ const App = () => {
       <img className="bgImg" src={bgImg} alt="" />
       <div className={`container`}>
         <Header onClick={setTheme} theme={darkTheme} />
-        <TodoInput />
-        <TodoList />
+        <TodoInput listTodo={listTodo} setListTodo={setListTodo} />
+        <TodoList listTodo={listTodo} />
       </div>
     </>
   );
