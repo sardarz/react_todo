@@ -21,7 +21,7 @@ const App = () => {
       <div className={`container`}>
         <Header onClick={setTheme} theme={darkTheme} />
         <TodoInput listTodo={listTodo} setListTodo={setListTodo} />
-        <TodoList listTodo={listTodo} />
+        <TodoList listTodo={listTodo} setListTodo={setListTodo}/>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const TodoItem = ({ value, isCompleted }) => {
+const TodoItem = ({ value, isCompleted, setListTodo, listTodo, index }) => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,11 @@ const TodoItem = ({ value, isCompleted }) => {
       >
         {value}
       </div>
-      <div className="todo__remove">
+      <div className="todo__remove" onClick={() => {
+        const newTodos = [...listTodo];
+        newTodos.splice(index, 1);
+        setListTodo(newTodos)
+      }}>
         <i className="fas fa-times"></i>
       </div>
     </div>
