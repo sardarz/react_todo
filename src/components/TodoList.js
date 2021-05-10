@@ -3,8 +3,36 @@ import TodoItem from './TodoItem';
 import './TodoList.scss';
 
 const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
-  const renderedListTodo = listTodo.map((item, idx) => {
+  let renderedListTodo = listTodo.map((item, idx) => {
     if (!listTodo.length) return;
+    if (filters === 'active') {
+      return (
+        <TodoItem
+          value={item.value}
+          isCompleted={item.isCompleted}
+          key={item.value}
+          index={idx}
+          listTodo={listTodo}
+          setListTodo={setListTodo}
+          showActive={true}
+        />
+      );
+    }
+    
+    if (filters === 'completed') {
+      return (
+        <TodoItem
+          value={item.value}
+          isCompleted={item.isCompleted}
+          key={item.value}
+          index={idx}
+          listTodo={listTodo}
+          setListTodo={setListTodo}
+          showCompleted={true}
+        />
+      );
+    }
+
     return (
       <TodoItem
         value={item.value}
@@ -17,7 +45,7 @@ const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
     );
   });
 
-
+  console.log(renderedListTodo);
   return (
     <div className="todo__list">
       {renderedListTodo}
@@ -49,10 +77,16 @@ const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
             Completed
           </div>
         </div>
-        <div className="todo__list-clear-completed" onClick={() => {
-          const newTodos = listTodo.filter(item => !item.isCompleted);
-          setListTodo(newTodos)
-        }}>Clear Completed</div>
+        <div
+          className="todo__list-clear-completed"
+          onClick={() => {
+            const newTodos = listTodo.filter((item) => !item.isCompleted);
+            console.log(listTodo);
+            setListTodo(newTodos);
+          }}
+        >
+          Clear Completed
+        </div>
       </div>
     </div>
   );
