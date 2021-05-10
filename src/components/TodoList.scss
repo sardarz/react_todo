@@ -50,3 +50,9 @@ body.light-theme {
     color: var(--lt-very-dark-grayish-blue);
   }
 }
+
+.todo__list-all.primary,
+.todo__list-active.primary,
+.todo__list-completed.primary {
+  color: var(--primary);
+}

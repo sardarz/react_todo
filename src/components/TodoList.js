@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from './TodoItem';
 import './TodoList.scss';
 
-const TodoList = ({ listTodo, setListTodo }) => {
+const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
   const renderedListTodo = listTodo.map((item, idx) => {
     if (!listTodo.length) return;
     return (
@@ -16,20 +16,43 @@ const TodoList = ({ listTodo, setListTodo }) => {
       />
     );
   });
-  console.log(listTodo);
+
+
   return (
     <div className="todo__list">
       {renderedListTodo}
       <div className="todo__list-stats">
         <div className="todo__list-items-left">
-          {listTodo.filter(item => !item.isCompleted).length} items left
+          {listTodo.filter((item) => !item.isCompleted).length} items left
         </div>
         <div className="todo__list-options">
-          <div className="todo__list-all">All</div>
-          <div className="todo__list-active">Active</div>
-          <div className="todo__list-completed">Completed</div>
+          <div
+            className={`todo__list-all ${filters === 'all' ? 'primary' : ''}`}
+            onClick={() => setFilters('all')}
+          >
+            All
+          </div>
+          <div
+            className={`todo__list-active ${
+              filters === 'active' ? 'primary' : ''
+            }`}
+            onClick={() => setFilters('active')}
+          >
+            Active
+          </div>
+          <div
+            className={`todo__list-completed ${
+              filters === 'completed' ? 'primary' : ''
+            }`}
+            onClick={() => setFilters('completed')}
+          >
+            Completed
+          </div>
         </div>
-        <div className="todo__list-clear-completed">Clear Completed</div>
+        <div className="todo__list-clear-completed" onClick={() => {
+          const newTodos = listTodo.filter(item => !item.isCompleted);
+          setListTodo(newTodos)
+        }}>Clear Completed</div>
       </div>
     </div>
   );
