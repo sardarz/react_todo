@@ -1,0 +1,9 @@
+.todo__list {
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 1px 2px 10px rgba(black, .2);
+}
+
+.todo__list .todo__item + .todo__item {
+  border-top: 1px solid var(--dark-grayish-blue);
+}

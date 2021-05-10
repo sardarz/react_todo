@@ -4,6 +4,11 @@
   margin-bottom: 3rem;
 }
 
+.todo__input {
+  box-shadow: 1px 2px 10px rgba(black, .2);
+  border-radius: .5rem;
+}
+
 .todo__input, .todo__item {
   width: 100%;
   border: none;
@@ -12,9 +17,7 @@
   background-color: var(--very-dark-desaturated-blue);
   color: var(--light-grayish-blue);
   padding: 1.5rem 7rem;
-  border-radius: .5rem;
   position: relative;
-  box-shadow: 1px 2px 10px rgba(black, .2);
   &::placeholder {
     color: var(--very-dark-grayish-blue-2);
   }

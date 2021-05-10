@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoItem from './TodoItem';
+import './TodoList.scss'
 
 const TodoList = ({listTodo}) => {
   const renderedListTodo = listTodo.map((item, idx) => {
@@ -9,7 +10,7 @@ const TodoList = ({listTodo}) => {
     )
   })
   console.log(listTodo);
-  return <div>
+  return <div className="todo__list">
     {renderedListTodo}
   </div>;
 };
