@@ -1,4 +1,4 @@
-@import "./design-tokens/css-variables";
+@import './design-tokens/css-variables';
 
 *,
 *::after,
@@ -29,16 +29,50 @@ body {
 //   top: 0;
 //   height: 30%;
 //   z-index: -10;
-//   background-position: center; 
+//   background-position: center;
 //   background: url('./images/bg-desktop-dark.jpg');
 // }
 
 .bgImg {
+  display: block;
   position: absolute;
   background-size: contain;
-  z-index: -10;
+  z-index: 10;
+  background: url('/images/bg-desktop-dark.jpg');
+  background-color: #fff;
+  height: 30rem;
+  top: 50%;
+  left: 0;
 }
 
+.bg-image {
+  background-color: #fff;
+  height: 30rem;
+  position: absolute;
+  width: 100%;
+  z-index: -10;
+  background: url('./images/bg-desktop-dark.jpg');
+}
+
+body.light-theme .bg-image {
+  background: url('./images/bg-desktop-light.jpg');
+}
+
+@media screen and (max-width: 500px) {
+  .bg-image {
+    background: url('./images/bg-mobile-dark.jpg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  body.light-theme .bg-image {
+    background: url('./images/bg-mobile-light.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: contain;
+  }
+}
 
 img {
   max-width: 100%;

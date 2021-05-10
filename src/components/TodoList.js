@@ -18,7 +18,7 @@ const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
         />
       );
     }
-    
+
     if (filters === 'completed') {
       return (
         <TodoItem
@@ -45,7 +45,6 @@ const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
     );
   });
 
-  console.log(renderedListTodo);
   return (
     <div className="todo__list">
       {renderedListTodo}
@@ -53,7 +52,7 @@ const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
         <div className="todo__list-items-left">
           {listTodo.filter((item) => !item.isCompleted).length} items left
         </div>
-        <div className="todo__list-options">
+        <div className="todo__list-options todo__list-options-desktop">
           <div
             className={`todo__list-all ${filters === 'all' ? 'primary' : ''}`}
             onClick={() => setFilters('all')}
@@ -86,6 +85,30 @@ const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
           }}
         >
           Clear Completed
+        </div>
+      </div>
+      <div className="todo__list-options todo__list-options-mobile">
+        <div
+          className={`todo__list-all ${filters === 'all' ? 'primary' : ''}`}
+          onClick={() => setFilters('all')}
+        >
+          All
+        </div>
+        <div
+          className={`todo__list-active ${
+            filters === 'active' ? 'primary' : ''
+          }`}
+          onClick={() => setFilters('active')}
+        >
+          Active
+        </div>
+        <div
+          className={`todo__list-completed ${
+            filters === 'completed' ? 'primary' : ''
+          }`}
+          onClick={() => setFilters('completed')}
+        >
+          Completed
         </div>
       </div>
     </div>

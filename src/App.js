@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
-import bgImg from './images/bg-desktop-dark.jpg';
+import bgImgDark from './images/bg-desktop-dark.jpg';
+import bgImgLight from './images/bg-desktop-light.jpg';
 import './App.scss';
 
 const App = () => {
@@ -18,7 +19,8 @@ const App = () => {
 
   return (
     <>
-      <img className="bgImg" src={bgImg} alt="" />
+      <div className="bg-image"></div>
+      <img className={`bgImg`} alt="" />
       <div className={`container`}>
         <Header onClick={setTheme} theme={darkTheme} />
         <TodoInput listTodo={listTodo} setListTodo={setListTodo} />

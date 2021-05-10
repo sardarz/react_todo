@@ -56,3 +56,39 @@ body.light-theme {
 .todo__list-completed.primary {
   color: var(--primary);
 }
+
+.todo__list-options-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .todo__list-options-desktop {
+    display: none;
+  }
+
+  .todo__list-stats {
+    border-radius: 0 0 .5rem .5rem;
+  }
+
+  .todo__list-options-mobile {
+    display: flex;
+    background-color: var(--very-dark-desaturated-blue);
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 3rem;
+    padding: 2rem 3rem;
+    border-radius: 0.5rem;
+  }
+
+  .todo__list {
+    background-color: var(--very-dark-blue);
+  }
+
+  body.light-theme .todo__list {
+    background-color: var(--lt-very-light-gray);
+  }
+
+  body.light-theme .todo__list-options-mobile {
+    background-color: #fff;
+  }
+}
