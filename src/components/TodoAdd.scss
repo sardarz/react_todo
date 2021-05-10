@@ -5,10 +5,54 @@
   color: var(--light-grayish-blue);
   border: none;
   padding: 2rem 7rem;
-  border-radius: 1rem;
+  border-radius: .5rem;
   // background-color: var(--very-dark-grayish-blue-1);
+
+  &::placeholder {
+    color: var(--very-dark-grayish-blue-1);;
+  }
 }
 
 .todoadd {
   margin-top: 5rem;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  left: 2.5rem;
+  top: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+  border: 2px solid var(--very-dark-grayish-blue-1);
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.circle.clicked {
+  background: var(--bg);
+  border: none;
+}
+
+.fa-check {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1rem;
+  opacity: 0;
+}
+
+.circle.clicked .fa-check {
+  opacity: 1;
+}
+
+
+
+.circle:hover {
+  // border-color: var(--bg);
 }
