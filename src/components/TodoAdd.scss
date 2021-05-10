@@ -4,7 +4,8 @@
   background-color: var(--very-dark-desaturated-blue);
   color: var(--light-grayish-blue);
   border: none;
-  padding: 2rem 7rem;
+  padding: 1.5rem 7rem;
+  line-height: 1.6;
   border-radius: .5rem;
   // background-color: var(--very-dark-grayish-blue-1);
 
@@ -41,7 +42,7 @@
   display: block;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-45%, -60%);
   color: white;
   font-size: 1rem;
   opacity: 0;
@@ -51,7 +52,10 @@
   opacity: 1;
 }
 
-
+.clicked + .todoadd__input {
+  text-decoration: line-through;
+  color:  var(--very-dark-grayish-blue-1);
+}
 
 .circle:hover {
   // border-color: var(--bg);
