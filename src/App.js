@@ -9,7 +9,6 @@ const App = () => {
   // const [list, setList] = useState([]);
 
   useEffect(() => {
-    console.log(darkTheme);
     document.body.classList = `${!darkTheme ? 'light-theme' : ''}`
   })
 

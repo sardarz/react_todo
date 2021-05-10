@@ -1,5 +1,6 @@
 .todo__form {
   position: relative;
+  margin-top: 5rem;
 }
 
 .todo__input {
@@ -12,6 +13,11 @@
   padding: 1.5rem 7rem;
   border-radius: .5rem;
   position: relative;
+  box-shadow: 1px 2px 10px rgba(black, .2);
+
+  &::placeholder {
+    color: var(--very-dark-grayish-blue-2);
+  }
 }
 
 .todo__input.checked {
@@ -48,4 +54,13 @@
 
 .circle.checked .fa-check {
   opacity: 1;
+}
+
+body.light-theme .todo__input {
+  background-color: white;
+  color: var(--very-dark-grayish-blue-2);
+}
+
+body.light-theme .circle {
+  border-color: var(--lt-light-grayish-blue);
 }
