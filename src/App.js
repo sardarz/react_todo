@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
+import bgImg from './images/bg-desktop-dark.jpg';
+import './App.scss';
 
-function App() {
+const App = () => {
+  const [theme, setTheme] = useState(true);
+
+  useEffect(() => {
+    console.log(theme);
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <img className="bgImg" src={bgImg} alt="" />
+      <div className="container">
+        <Header onClick={setTheme} theme={theme}/>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
