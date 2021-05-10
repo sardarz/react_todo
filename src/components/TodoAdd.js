@@ -1,28 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import './TodoAdd.scss';
+import React, { useState, useEffect, useRef } from 'react';
+import './TodoAdd.scss'
+import TodoItem from './TodoItem';
 
-const TodoAdd = () => {
+const TodoAdd = ({setList, list}) => {
+  const [currentTodo, setCurrentTodo] = useState(null);
   const [value, setValue] = useState('');
-  const [clicked, setClicked] = useState(false);
+  const myAddItem = useRef(null)
+
+  const onFormSubmit = (evt) => {
+    evt.preventDefault();
+
+    let newList = [...list, currentTodo];
+    setList(newList);
+
+    setValue('')
+  }
+
+
 
   useEffect(() => {
     // console.log(value);
   });
   return (
-    <div className="todoadd">
-      <div
-        className={`circle ${clicked ? 'clicked' : ''}`}
-        onClick={() => setClicked(!clicked)}
-      >
-        <i className="fas fa-check"></i>
-      </div>
-      <input
-        className="todoadd__input"
-        value={value}
-        onChange={(evt) => setValue(evt.target.value)}
-        placeholder="Add your todo entry"
-      />
-    </div>
+    <form onSubmit={onFormSubmit} className="todo-add">
+      <TodoItem setCurrentTodo={setCurrentTodo} value={value} setValue={setValue}/>
+    </form>
   );
 };
 
