@@ -1,6 +1,7 @@
 .todo__form {
   position: relative;
   margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
 .todo__input, .todo__item {
@@ -79,4 +80,13 @@ body.light-theme .circle {
 
 .circle-add {
   cursor: initial;
+}
+
+.todo__remove {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+  cursor: pointer;
 }

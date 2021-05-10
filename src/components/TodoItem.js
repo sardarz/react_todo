@@ -19,6 +19,9 @@ const TodoItem = ({ value }) => {
       >
         {value}
       </div>
+      <div className="todo__remove">
+        <i className="fas fa-times"></i>
+      </div>
     </div>
   );
 };

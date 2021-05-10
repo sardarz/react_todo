@@ -3,7 +3,7 @@ import TodoItem from './TodoItem';
 
 const TodoList = ({listTodo}) => {
   return <div>
-    <TodoItem value="fafsadfsaf"/>
+    <TodoItem value="gofuckyouresl"/>
   </div>;
 };
 
