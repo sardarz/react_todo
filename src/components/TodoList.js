@@ -17,7 +17,22 @@ const TodoList = ({ listTodo, setListTodo }) => {
     );
   });
   console.log(listTodo);
-  return <div className="todo__list">{renderedListTodo}</div>;
+  return (
+    <div className="todo__list">
+      {renderedListTodo}
+      <div className="todo__list-stats">
+        <div className="todo__list-items-left">
+          {renderedListTodo.length} items left
+        </div>
+        <div className="todo__list-options">
+          <div className="todo__list-all">All</div>
+          <div className="todo__list-active">Active</div>
+          <div className="todo__list-completed">Completed</div>
+        </div>
+        <div className="todo__list-clear-completed">Clear Completed</div>
+      </div>
+    </div>
+  );
 };
 
 export default TodoList;

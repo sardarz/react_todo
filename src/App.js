@@ -6,7 +6,7 @@ import bgImg from './images/bg-desktop-dark.jpg';
 import './App.scss';
 
 const App = () => {
-  const [darkTheme, setTheme] = useState(true);
+  const [darkTheme, setTheme] = useState(false);
   const [listTodo, setListTodo] = useState([]);
 
   useEffect(() => {
