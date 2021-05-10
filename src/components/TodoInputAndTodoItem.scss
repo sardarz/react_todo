@@ -1,0 +1,51 @@
+.todo__form {
+  position: relative;
+}
+
+.todo__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  line-height: 1.6;
+  background-color: var(--very-dark-desaturated-blue);
+  color: var(--light-grayish-blue);
+  padding: 1.5rem 7rem;
+  border-radius: .5rem;
+  position: relative;
+}
+
+.todo__input.checked {
+  text-decoration: line-through;
+}
+
+.circle{
+  position: absolute;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--very-dark-grayish-blue-1);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  left: 2rem;
+  cursor: pointer;
+}
+
+.circle.checked {
+  background: var(--bg);
+  border: 0;
+}
+
+.fa-check {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+}
+
+.circle.checked .fa-check {
+  opacity: 1;
+}
