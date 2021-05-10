@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import './TodoInputAndTodoItem.scss';
 
-const TodoInput = ({listTodo, setListTodo}) => {
+const TodoInput = ({ listTodo, setListTodo }) => {
   const [value, setValue] = useState('');
   const [checked, setChecked] = useState(false);
 
-  const onFormSubmit = evt => {
+  const onFormSubmit = (evt) => {
     evt.preventDefault();
-    // console.log(evt);
     if (!value) return;
-    const tempArr = [...listTodo, {value, isCompleted: false}]
-    setValue('')
-    setListTodo(tempArr)
-  }
+    if (listTodo.some((item) => item.value === value)) return null;
+    const tempArr = [...listTodo, { value, isCompleted: false }];
+    setValue('');
+    setListTodo(tempArr);
+  };
 
   return (
     <form className="todo__form" onSubmit={onFormSubmit}>
       <div className={`circle circle-add`}>
-      <i className="fas fa-check"></i>
+        <i className="fas fa-check"></i>
       </div>
       <input
         placeholder="Add todo entry"
