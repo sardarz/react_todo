@@ -7,7 +7,10 @@ const TodoInput = () => {
 
   const onFormSubmit = evt => {
     evt.preventDefault();
-    console.log(evt);
+    // console.log(evt);
+    if (!value) return;
+    console.log(value);
+    setValue('')
   }
 
   return (
