@@ -1,7 +1,8 @@
 .todo__list {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 1px 2px 10px rgba(black, .2);
+  box-shadow: 1px 2px 10px rgba(black, 0.2);
+  color: var(--dark-grayish-blue);
 }
 
 .todo__list .todo__item + .todo__item {
@@ -13,10 +14,39 @@
   padding: 1.5rem 2.5rem;
   font-size: 1.4rem;
   display: flex;
+  border-top: 1px solid var(--dark-grayish-blue);
+  background-color: var(--very-dark-desaturated-blue);
+}
+
+body.light-theme .todo__list-stats {
+  background-color: #fff;
 }
 
 .todo__list-options {
   display: flex;
   width: 18rem;
   justify-content: space-between;
+}
+
+.todo__list-clear-completed,
+.todo__list-all,
+.todo__list-active,
+.todo__list-completed {
+  cursor: pointer;
+}
+
+.todo__list-clear-completed:hover,
+.todo__list-all:hover,
+.todo__list-active:hover,
+.todo__list-completed:hover {
+  color: var(--light-grayish-blue-hover);
+}
+
+body.light-theme {
+  & .todo__list-clear-completed:hover,
+  & .todo__list-all:hover,
+  & .todo__list-active:hover,
+  & .todo__list-completed:hover {
+    color: var(--lt-very-dark-grayish-blue);
+  }
 }
