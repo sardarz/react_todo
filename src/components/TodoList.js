@@ -22,7 +22,7 @@ const TodoList = ({ listTodo, setListTodo }) => {
       {renderedListTodo}
       <div className="todo__list-stats">
         <div className="todo__list-items-left">
-          {renderedListTodo.length} items left
+          {listTodo.filter(item => !item.isCompleted).length} items left
         </div>
         <div className="todo__list-options">
           <div className="todo__list-all">All</div>

@@ -4,7 +4,9 @@ const TodoItem = ({ value, isCompleted, setListTodo, listTodo, index }) => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
-    isCompleted = checked;
+    const checkedTodos = [...listTodo];
+    checkedTodos[index].isCompleted = checked;
+    setListTodo(checkedTodos)
   }, [checked]);
 
   return (
