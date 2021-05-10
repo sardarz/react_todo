@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const TodoItem = ({ value }) => {
+const TodoItem = ({ value, isCompleted }) => {
   const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    isCompleted = checked;
+  }, [checked]);
 
   return (
     <div className="todo__item">
       <div
         className={`circle ${checked ? 'checked' : ''}`}
-        onClick={() => setChecked(!checked)}
+        onClick={() => {
+          setChecked(!checked);
+        }}
       >
         <i className="fas fa-check"></i>
       </div>
