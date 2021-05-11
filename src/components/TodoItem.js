@@ -21,7 +21,7 @@ const TodoItem = ({
   if (showActive && isCompleted) return null;
 
   return (
-    <div className={`todo__item `}>
+    <div className={`todo__item`}>
       <div
         className={`circle ${checked ? 'checked' : ''}`}
         onClick={() => {

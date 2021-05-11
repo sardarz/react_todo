@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
-import bgImgDark from './images/bg-desktop-dark.jpg';
-import bgImgLight from './images/bg-desktop-light.jpg';
 import './App.scss';
 
 const App = () => {
@@ -14,8 +12,6 @@ const App = () => {
   useEffect(() => {
     document.body.classList = `${!darkTheme ? 'light-theme' : ''}`;
   });
-
-  const arr = [<Header />, <Header />];
 
   return (
     <>

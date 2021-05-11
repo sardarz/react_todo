@@ -20,37 +20,42 @@ body {
   background-size: 100% 30%;
   background-repeat: no-repeat;
   background-color: var(--very-dark-blue);
+  color: var(--dark-grayish-blue);
 }
 
-// .bg-img {
-//   position: absolute;
-//   left: 0%;
-//   right: 0%;
-//   top: 0;
-//   height: 30%;
-//   z-index: -10;
-//   background-position: center;
-//   background: url('./images/bg-desktop-dark.jpg');
-// }
+body input {
+  color: var(--dark-grayish-blue);
+}
+
+body.light-theme {
+  color: var(--lt-very-dark-grayish-blue);
+}
+body.light-theme input {
+  color: var(--lt-very-dark-grayish-blue);
+
+  &::placeholder {
+    color: var(--lt-light-grayish-blue);
+  }
+}
 
 .bgImg {
-  display: block;
   position: absolute;
-  background-size: contain;
-  z-index: 10;
-  background: url('/images/bg-desktop-dark.jpg');
-  background-color: #fff;
-  height: 30rem;
   top: 50%;
   left: 0;
+  z-index: 10;
+  display: block;
+  height: 30rem;
+  background-size: contain;
+  background: url('/images/bg-desktop-dark.jpg');
+  background-color: #fff;
 }
 
 .bg-image {
-  background-color: #fff;
-  height: 30rem;
   position: absolute;
-  width: 100%;
   z-index: -10;
+  height: 30rem;
+  width: 100%;
+  background-color: #fff;
   background: url('./images/bg-desktop-dark.jpg');
 }
 
@@ -60,23 +65,23 @@ body.light-theme .bg-image {
 
 @media screen and (max-width: 500px) {
   .bg-image {
-    background: url('./images/bg-mobile-dark.jpg');
     width: 100%;
+    background: url('./images/bg-mobile-dark.jpg');
     background-repeat: no-repeat;
     background-size: contain;
   }
 
   body.light-theme .bg-image {
+    width: 100%;
     background: url('./images/bg-mobile-light.jpg');
     background-repeat: no-repeat;
-    width: 100%;
     background-size: contain;
   }
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 button,

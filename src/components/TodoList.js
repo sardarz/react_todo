@@ -80,7 +80,6 @@ const TodoList = ({ listTodo, setListTodo, filters, setFilters }) => {
           className="todo__list-clear-completed"
           onClick={() => {
             const newTodos = listTodo.filter((item) => !item.isCompleted);
-            console.log(listTodo);
             setListTodo(newTodos);
           }}
         >
